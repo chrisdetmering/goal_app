@@ -1,14 +1,5 @@
 <h3>Goal:</h3>
 
-<% if !@goal.comments.nil? %>
-  <% @goal.comments.each do |comment| %>
-    <p> <%= comment.body %></p>
-  <% end %>
-<% end %>
-
-<h3>New Comment</h3>
-<%= render 'goal_comments/new', goal: @goal %>
-
 <table style="width:10%">
 
   <tr>
