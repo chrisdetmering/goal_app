@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: %i(new create destroy index show)
   resource :session, only: [:new, :create, :destroy]
   resources :goals 
-  resources :user_comments, only: %i(new create )
+  resources :user_comments, only: %i(new create)
+  resources :goal_comments, only: %i(new create)
 end
