@@ -1,0 +1,26 @@
+<h2> <%= @user.email %>'s Profile </h2>
+
+
+<h3> <%= @user.email %>'s Goals: </h3>
+
+
+
+<a href="<%= new_goal_url %>">New Goal</a>
+
+  <% @user.goals.each do |goal| %>
+  <p> 
+    <a href="<%= goal_url(goal) %>"><%= goal.title %></a>
+   <p> <%= goal.private?  ? "Private" : "Public"%></p>
+   <p> <%= goal.completed  ? "Completed" : "Ongoing"%></p>
+    <%= render 'goals/edit', goal: goal %>
+    <%= render 'goals/delete', goal: goal %>
+  </p>
+  <% end %>
+
+
+<%= content_for :footer do %>
+  <form action="<%= users_url %>" method="GET">
+    <input type="submit" value="All Users">
+  </form>
+<% end %>
+

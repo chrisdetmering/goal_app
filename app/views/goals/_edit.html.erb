@@ -1,0 +1,16 @@
+
+  <form action="<%= goal_url %>" method="POST">
+      <input type="hidden" name="_method" value="PATCH">
+      <input 
+        type="hidden"
+        name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+
+      <% if goal.completed %>
+        <input type="hidden" name="goal[completed]" value="false">
+        <input type="submit" value="Ops didn't complete">
+      <% else %>
+        <input type="hidden" name="goal[completed]" value="true">
+        <input type="submit" value="Complete">
+      <% end %>
+    </form>

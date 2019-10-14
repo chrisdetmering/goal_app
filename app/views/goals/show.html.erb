@@ -1,0 +1,27 @@
+<h3>Goal:</h3>
+
+<table style="width:10%">
+
+  <tr>
+    <td>Title:</td>
+    <td><%= @goal.title %></td>
+  </tr>
+  <tr>
+    <td>Details:</td>
+    <td><%= @goal.description %></td>
+  </tr>
+  <tr>
+    <td>Visability:</td>
+    <td><%= @goal.private? %></td>
+  </tr>
+  <tr>
+    <td>Finished?:</td>
+    <td><%= @goal.completed %></td>
+  </tr>
+  <tr>
+    <td>Completed?</td>
+    <td><%= render 'edit', goal: @goal %></td>
+  </tr>
+ 
+
+</table>
