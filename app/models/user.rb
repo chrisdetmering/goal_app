@@ -19,9 +19,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
  
   has_many :goals 
-  has_many :comments, 
-    class_name: 'UserComment', 
-    foreign_key: :user_id 
+  has_many :comments, :as => :commentable
 
   after_initialize :ensure_session_token
 

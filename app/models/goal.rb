@@ -19,8 +19,6 @@ class Goal < ApplicationRecord
     class_name: 'User',
     foreign_key: :user_id
 
-  has_many :comments, 
-    class_name: 'GoalComment', 
-    foreign_key: :goal_id
+  has_many :comments, :as => :commentable
     
 end 
