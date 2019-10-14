@@ -1,6 +1,12 @@
 <h3>Goal:</h3>
 
-<%= render 'comments/new'%>
+<% if !@goal.comments.nil? %>
+  <% @goal.comments.each do |comment| %>
+    <p> <%= comment.body %> <p>
+  <% end %>
+<% end %>
+
+<%= render 'comments/new', commentable: @goal %>
 
 <table style="width:10%">
 

@@ -1,6 +1,12 @@
 <h2> <%= @user.email %>'s Profile </h2>
 
-<%= render 'comments/new'%>
+<% if !@user.comments.nil? %>
+  <% @user.comments.each do |comment| %>
+    <p> <%= comment.body %> <p>
+  <% end %>
+<% end %>
+
+<%= render 'comments/new', commentable: @user %>
 
 <h3> <%= @user.email %>'s Goals: </h3>
 
