@@ -1,0 +1,10 @@
+<form action="<%= user_comments_url %>" method="POST">
+<input 
+  type="hidden" 
+  name="authenticity_token"
+  value="<%= form_authenticity_token %>">
+
+  <label for='user_comment_body'>Comment:</label>
+  <textarea name='user_comment[body]'></textarea>
+  <input type="submit" value="comment">
+</form>

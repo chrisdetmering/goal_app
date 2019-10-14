@@ -1,6 +1,6 @@
 <h2> <%= @user.email %>'s Profile </h2>
 
-
+<%= render 'user_comments/new'%>
 <h3> <%= @user.email %>'s Goals: </h3>
 
 <a href="<%= new_goal_url %>">New Goal</a>

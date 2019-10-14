@@ -11,7 +11,9 @@ class UserCommentsController < ApplicationController
       flash[:notice] = "Comment Added!"
       redirect_to user_url(@user_comment.user_id)
     else
-      flash.now
+      flash.now[:errors] = @user_comment.errors.full_messages 
+
+      render :new
     end
   end 
 
