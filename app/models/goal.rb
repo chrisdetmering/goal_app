@@ -6,10 +6,10 @@
 #  title       :text             not null
 #  user_id     :integer          not null
 #  description :string           not null
-#  private     :boolean          default("false")
 #  completed   :boolean          default("false")
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  private?    :boolean          default("false")
 #
 
 class Goal < ApplicationRecord 
