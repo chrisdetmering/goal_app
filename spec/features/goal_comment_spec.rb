@@ -27,4 +27,10 @@ feature 'Goal comments' do
     click_link 'Make Dinner'
     expect(page).to have_button('comment')
   end 
+
+  scenario 'should list all the goal\'s comments' do 
+    fill_in 'Comment:', with: "This goal is lame"
+    click_button 'comment'
+    expect(page).to have_content("This goal is lame")
+  end 
 end 
