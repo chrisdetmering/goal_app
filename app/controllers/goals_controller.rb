@@ -14,7 +14,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goals_params)
     @goal.user_id = current_user.id 
 
-    if @goal.save!
+    if @goal.save
       
       redirect_to goal_url(@goal)
     else
