@@ -17,11 +17,14 @@
     <p> <%= goal.private?  ? "Private" : "Public"%></p>
     <p> <%= goal.completed  ? "Completed" : "Ongoing"%></p>
 
+
+    <% if current_user.id == goal.user_id %>
     <%= render 'goals/edit', goal: goal %>
     <%= render 'goals/delete', goal: goal %>
+    <% end %>
+
   </p>
   <% end %>
-
 
 <%= content_for :footer do %>
   <form action="<%= users_url %>" method="GET">

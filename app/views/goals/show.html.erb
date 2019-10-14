@@ -25,8 +25,11 @@
     <td>Finished?:</td>
     <td><%= @goal.completed %></td>
   </tr>
+  <% if current_user.id == @goal.user_id %>
   <tr>
     <td>Completed?</td>
     <td><%= render 'edit', goal: @goal %></td>
   </tr>
+  <% end %>
+  
 </table>
