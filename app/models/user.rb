@@ -12,6 +12,8 @@
 #
 
 class User < ApplicationRecord
+  include Commentable
+
   attr_reader :password 
 
   validates :email, :password_digest, :session_token, presence: true
@@ -19,7 +21,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
  
   has_many :goals 
-  has_many :comments, :as => :commentable
+  
 
   after_initialize :ensure_session_token
 
