@@ -10,11 +10,25 @@ feature 'User comments' do
     click_on 'Create!'
   end 
 
+  background(:each) do 
+    user = User.find_by(email: 'alexdetmering@gmail.com')
+    visit user_url(user)
+    fill_in 'Comment:', with: 'What is up?!'
+    click_on 'comment'
+  end 
+
   scenario 'user show page should have comment button' do 
     user = User.find_by(email: 'alexdetmering@gmail.com')
     visit user_url(user)
     expect(page).to have_button('comment')
 
+  end 
+
+  scenario 'user show page should list all user\'s comments' do 
+    user = User.find_by(email: 'alexdetmering@gmail.com')
+    visit user_url(user)
+
+    expect(page).to have_content "What is up?!"
   end 
 
 end 
