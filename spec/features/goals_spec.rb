@@ -17,13 +17,6 @@ feature 'CRUD of goals' do
       check("goal_private")
       check("goal_completed")
       click_button "New Goal"
-
-      visit new_goal_url 
-      fill_in 'Title', with: 'Go to Bed'
-      fill_in 'Description', with: 'Go to bed with Sarah'
-      check("Private?")
-      check("Completed?")
-      click_button "New Goal"
     end 
 
   feature 'Create new goal' do 
@@ -46,7 +39,6 @@ feature 'CRUD of goals' do
       user = User.find_by(email: "alexdetmering@gmail.com")
       visit user_url(user)
       expect(page).to have_content "Make Dinner"
-      expect(page).to have_content "Go to Bed"
     end 
   end 
 
@@ -61,8 +53,9 @@ feature 'CRUD of goals' do
     scenario 'update button should update goal' do 
       user = User.find_by(email: "alexdetmering@gmail.com")
       visit user_url(user)
+      click_on "Ops didn't complete"
+      expect(page).to have_content "Goal Updated!"
     end 
-   
   end 
 
 
