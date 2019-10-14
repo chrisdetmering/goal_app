@@ -20,5 +20,4 @@ class Goal < ApplicationRecord
     foreign_key: :user_id
 
   has_many :comments, :as => :commentable
-    
 end 
